@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C412300C-1FFE-4BB8-9536-6FDDA644506A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Dm.WeatherForecast.Client.Grabber.App</RootNamespace>
+    <AssemblyName>Dm.WeatherForecast.Client.Grabber.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\..\..\Bin</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.12.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlAgilityPack.1.11.12\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TinyMapper, Version=2.0.0.40, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\TinyMapper.2.0.8\lib\net45\TinyMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GrabberApp.cs" />
+    <Compile Include="GrabberForecastConverter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\Contract\Dm.WeatherForecast.DataAccess.Contract.csproj">
+      <Project>{c810ce96-872f-41f5-b2e4-4221a8d018e0}</Project>
+      <Name>Dm.WeatherForecast.DataAccess.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DataAccess\Service\Dm.WeatherForecast.DataAccess.Service.csproj">
+      <Project>{e973ad62-9088-4d0b-b297-6f48f0dd3bdb}</Project>
+      <Name>Dm.WeatherForecast.DataAccess.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Contract\Dm.WeatherForecast.Client.Grabber.Contract.csproj">
+      <Project>{84ABDB12-872C-4711-BA35-DDA8C87DC535}</Project>
+      <Name>Dm.WeatherForecast.Client.Grabber.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GisMeteo\Dm.WeatherForecast.Client.Grabber.Gismeteo.csproj">
+      <Project>{1A5B6F65-7DF8-4844-8018-19495B995242}</Project>
+      <Name>Dm.WeatherForecast.Client.Grabber.Gismeteo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
