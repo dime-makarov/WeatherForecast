@@ -1,6 +1,6 @@
 ﻿using NPoco;
 
-namespace Dm.WeatherForecast.DataAccess.Service.Entities
+namespace Dm.WeatherForecast.DataAccess.Service.MySql.Entities
 {
     [TableName("Cities")]
     [PrimaryKey("Id", AutoIncrement = true)]

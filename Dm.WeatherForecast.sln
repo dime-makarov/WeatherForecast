@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAcce
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Service", "DataAccess\Service\Dm.WeatherForecast.DataAccess.Service.csproj", "{E973AD62-9088-4D0B-B297-6F48F0DD3BDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Service.MySql", "DataAccess\Service\MySql\Dm.WeatherForecast.DataAccess.Service.MySql.csproj", "{E973AD62-9088-4D0B-B297-6F48F0DD3BDB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{3CC2A170-C674-4647-B194-FD64CDECC18B}"
 EndProject

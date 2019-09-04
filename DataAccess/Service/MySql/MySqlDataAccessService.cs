@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service.Entities;
+using Dm.WeatherForecast.DataAccess.Service.MySql.Entities;
 using Nelibur.ObjectMapper;
 using NPoco;
+using MySqlClientNamespace = MySql.Data.MySqlClient;
 
-namespace Dm.WeatherForecast.DataAccess.Service
+namespace Dm.WeatherForecast.DataAccess.Service.MySql
 {
     public class MySqlDataAccessService : IForecastDataAccess
     {
@@ -16,7 +17,7 @@ namespace Dm.WeatherForecast.DataAccess.Service
             DatabaseInstance = new Database(
                 @"Server=sql7.freemysqlhosting.net;Database=sql7302023;Uid=sql7302023;Pwd=C8VVCtPIIP;Charset=utf8;",
                 DatabaseType.MySQL,
-                MySql.Data.MySqlClient.MySqlClientFactory.Instance);
+                MySqlClientNamespace.MySqlClientFactory.Instance);
 
             // Mapping configuration
             TinyMapper.Bind<CityEntity, City>();

@@ -60,7 +60,7 @@
       <Project>{c810ce96-872f-41f5-b2e4-4221a8d018e0}</Project>
       <Name>Dm.WeatherForecast.DataAccess.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\DataAccess\Service\Dm.WeatherForecast.DataAccess.Service.csproj">
+    <ProjectReference Include="..\..\..\DataAccess\Service\MySql\Dm.WeatherForecast.DataAccess.Service.MySql.csproj">
       <Project>{e973ad62-9088-4d0b-b297-6f48f0dd3bdb}</Project>
       <Name>Dm.WeatherForecast.DataAccess.Service</Name>
     </ProjectReference>
