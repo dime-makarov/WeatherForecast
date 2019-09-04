@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service.MySql;
+using Dm.WeatherForecast.DataAccess.Service.Sqlite;
 
 namespace Dm.WeatherForecast.Test.UnitTests
 {
@@ -12,7 +12,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetCities_Test()
         {
-            IForecastDataAccess svc = new MySqlDataAccessService();
+            IForecastDataAccess svc = new SqliteDataAccessService();
 
             var cities = svc.GetCities();
 
@@ -23,7 +23,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetForecast_Test()
         {
-            IForecastDataAccess svc = new MySqlDataAccessService();
+            IForecastDataAccess svc = new SqliteDataAccessService();
 
             var forecasts = svc.GetForecast(1, DateTime.Now.AddDays(1));
 
@@ -34,7 +34,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void AddCity_Test()
         {
-            IForecastDataAccess svc = new MySqlDataAccessService();
+            IForecastDataAccess svc = new SqliteDataAccessService();
 
             int result = svc.AddCity(new City { Name = @"Киров" });
 
@@ -44,7 +44,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetCityByName_Test()
         {
-            IForecastDataAccess svc = new MySqlDataAccessService();
+            IForecastDataAccess svc = new SqliteDataAccessService();
 
             City city = svc.GetCityByName(@"Киров");
         }
@@ -52,7 +52,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void AddOrUpdateForecast_Test()
         {
-            IForecastDataAccess svc = new MySqlDataAccessService();
+            IForecastDataAccess svc = new SqliteDataAccessService();
 
             svc.AddOrUpdateForecast(new Forecast { CityId = 1, TargetDate = DateTime.Now });
         }
