@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service;
+using Dm.WeatherForecast.DataAccess.Service.MySql;
 
 namespace Dm.WeatherForecast.Test.UnitTests
 {

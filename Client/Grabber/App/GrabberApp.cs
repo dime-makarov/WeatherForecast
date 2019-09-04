@@ -6,7 +6,7 @@ using System.Timers;
 using Dm.WeatherForecast.Client.Grabber.Contract;
 using Dm.WeatherForecast.Client.Grabber.Gismeteo;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service;
+using Dm.WeatherForecast.DataAccess.Service.MySql;
 using Nelibur.ObjectMapper;
 
 namespace Dm.WeatherForecast.Client.Grabber.App

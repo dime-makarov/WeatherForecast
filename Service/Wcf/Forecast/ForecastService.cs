@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service;
+using Dm.WeatherForecast.DataAccess.Service.MySql;
 using Dm.WeatherForecast.Service.Wcf.Contract;
 using Nelibur.ObjectMapper;
 
