@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Viewer", "Viewer", "{AECE81
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.Viewer.ViewerApp", "Client\Viewer\ViewerApp\Dm.WeatherForecast.Client.Viewer.ViewerApp.csproj", "{83753143-2C6B-4E8D-BE9D-A3922860AE02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Service.Sqlite", "DataAccess\Service\Sqlite\Dm.WeatherForecast.DataAccess.Service.Sqlite.csproj", "{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{BB77F5F5-9F40-4F06-882C-5AB7D234E759} = {13E9E752-9240-4503-9090-ADFB67E8C884}
 		{AECE810F-87AA-4301-867A-D908B1B2E383} = {C7F2DA0C-3E89-441A-8895-972CCDF24299}
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02} = {AECE810F-87AA-4301-867A-D908B1B2E383}
+		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92FFCB1F-1954-4803-8C28-E30412069472}
