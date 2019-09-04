@@ -34,9 +34,12 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void AddCity_Test()
         {
-            IForecastDataAccess svc = new SqliteDataAccessService();
+            int result = 0;
 
-            int result = svc.AddCity(new City { Name = @"Киров" });
+            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            {
+                result = svc.AddCity(new City { Name = @"Казань" });
+            }
 
             Assert.IsTrue(result > 0);
         }

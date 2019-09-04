@@ -1,11 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using Dm.WeatherForecast.DataAccess.Contract;
 
 namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
 {
     public class SqliteDataAccessService : IForecastDataAccess
     {
+        public SqliteDataAccessService()
+        {
+            // TODO: Move to configuration file
+            ConnectionString = @"Data Source=WeatherForecast.db;";
+        }
+
+        protected string ConnectionString;
+
         /// <summary>
         /// Get all cities
         /// </summary>
@@ -20,7 +29,30 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         /// <returns>Id of new inserted city</returns>
         public int AddCity(City newCity)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            string sqlInsert = @"insert into Cities(Name) values (@cityName)";
+            string sqlGetInsertedId = @"select seq from sqlite_sequence where name='Cities'";
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(sqlInsert, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("cityName", newCity.Name);
+                    cmd.ExecuteNonQuery();
+                }
+
+                using (var cmd = new SQLiteCommand(sqlGetInsertedId, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    var obj = cmd.ExecuteScalar();
+                    result = (int)(long)obj;
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
