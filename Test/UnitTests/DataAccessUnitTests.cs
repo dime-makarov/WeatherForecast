@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Dm.WeatherForecast.DataAccess.Contract;
@@ -12,9 +13,12 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetCities_Test()
         {
-            IForecastDataAccess svc = new SqliteDataAccessService();
+            IEnumerable<City> cities;
 
-            var cities = svc.GetCities();
+            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            {
+                cities = svc.GetCities();
+            }
 
             Assert.IsNotNull(cities);
             Assert.IsTrue(cities.Any());

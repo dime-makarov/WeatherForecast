@@ -20,7 +20,32 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         /// </summary>
         public IEnumerable<City> GetCities()
         {
-            throw new NotImplementedException();
+            List<City> result = new List<City>();
+            string sqlInsert = @"select Id, Name from Cities";
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(sqlInsert, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            result.Add(new City
+                            {
+                                Id = (int)(long)reader[0],
+                                Name = (string)reader[1]
+                            });
+                        }
+                    }
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
