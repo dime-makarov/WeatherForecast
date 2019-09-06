@@ -63,9 +63,16 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void AddOrUpdateForecast_Test()
         {
-            IForecastDataAccess svc = new SqliteDataAccessService();
-
-            svc.AddOrUpdateForecast(new Forecast { CityId = 1, TargetDate = DateTime.Now });
+            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            {
+                DateTime now = DateTime.Now;
+                DateTime targetDate = new DateTime(now.Year, now.Month, now.Day, 1, 0, 0);
+                svc.AddOrUpdateForecast(new Forecast
+                {
+                    CityId = 1,
+                    TargetDate = targetDate
+                });
+            }
         }
     }
 }

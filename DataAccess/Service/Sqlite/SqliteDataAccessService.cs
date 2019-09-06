@@ -165,7 +165,39 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         /// <returns></returns>
         public void AddOrUpdateForecast(Forecast newForecast)
         {
-            throw new NotImplementedException();
+            string sqlCheckExistence = @"select count(*) from Forecasts where CityId=@cityId and TargetDate=@targetDate";
+
+            string sqlInsert = @"insert into Forecasts(CityId, TargetDate, Temperature, WindSpeed, WindDirection, Pressure, Humidity) values (@cityId, @targetDate, @temperature, @windSpeed, @windDirection, @pressure, @humidity)";
+            string sqlUpdate = @"update Forecasts set Temperature=@temperature, WindSpeed=@windSpeed, WindDirection=@windDirection, Pressure=@pressure, Humidity=@humidity where CityId=@cityId and TargetDate=@targetDate";
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+                bool forecastExists = false;
+
+                using (var cmd = new SQLiteCommand(sqlCheckExistence, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("cityId", newForecast.CityId);
+                    cmd.Parameters.AddWithValue("targetDate", newForecast.TargetDate.ToString(DateTimeFormat));
+
+                    forecastExists = (long)cmd.ExecuteScalar() > 0;
+                }
+
+                using (var cmd = new SQLiteCommand(forecastExists ? sqlUpdate : sqlInsert, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("cityId", newForecast.CityId);
+                    cmd.Parameters.AddWithValue("targetDate", newForecast.TargetDate.ToString(DateTimeFormat));
+                    cmd.Parameters.AddWithValue("temperature", newForecast.Temperature);
+                    cmd.Parameters.AddWithValue("windSpeed", newForecast.WindSpeed);
+                    cmd.Parameters.AddWithValue("windDirection", newForecast.WindDirection);
+                    cmd.Parameters.AddWithValue("pressure", newForecast.Pressure);
+                    cmd.Parameters.AddWithValue("humidity", newForecast.Humidity);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         /// <summary>
