@@ -51,9 +51,10 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetCityByName_Test()
         {
-            IForecastDataAccess svc = new SqliteDataAccessService();
-
-            City city = svc.GetCityByName(@"Киров");
+            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            {
+                City city = svc.GetCityByName(@"Казань");
+            }
         }
 
         [TestMethod]

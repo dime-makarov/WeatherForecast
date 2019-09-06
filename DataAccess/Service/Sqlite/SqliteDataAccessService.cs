@@ -86,7 +86,34 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         /// <returns>City instance or null</returns>
         public City GetCityByName(string cityName)
         {
-            throw new NotImplementedException();
+            City result = null;
+            string sql = @"select Id, Name from Cities where Name=@cityName";
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("cityName", cityName);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            // There must be only one city with given name
+                            result = new City
+                            {
+                                Id = (int)(long)reader[0],
+                                Name = (string)reader[1]
+                            };
+                        }
+                    }
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
