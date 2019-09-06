@@ -21,13 +21,13 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         public IEnumerable<City> GetCities()
         {
             List<City> result = new List<City>();
-            string sqlInsert = @"select Id, Name from Cities";
+            string sql = @"select Id, Name from Cities";
 
             using (var conn = new SQLiteConnection(ConnectionString))
             {
                 conn.Open();
 
-                using (var cmd = new SQLiteCommand(sqlInsert, conn))
+                using (var cmd = new SQLiteCommand(sql, conn))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
 
