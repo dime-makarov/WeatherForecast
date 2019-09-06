@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Globalization;
 using Dm.WeatherForecast.DataAccess.Contract;
 
 namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
@@ -14,6 +15,8 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         }
 
         protected string ConnectionString;
+
+        protected string DateTimeFormat = @"ddMMyyyyHHmmss";
 
         /// <summary>
         /// Get all cities
@@ -121,7 +124,39 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
         /// </summary>
         public IEnumerable<Forecast> GetForecast(int cityId, DateTime targetDate)
         {
-            throw new NotImplementedException();
+            List<Forecast> result = new List<Forecast>();
+            string sql = @"select CityId, TargetDate, Temperature, WindSpeed, WindDirection, Pressure, Humidity from Forecasts where CityId=@cityId and TargetDate like @targetDate";
+
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.Parameters.AddWithValue("cityId", cityId);
+                    cmd.Parameters.AddWithValue("targetDate", targetDate.ToString("ddMMyyyy") + "%"); // for LIKE clause
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            result.Add(new Forecast
+                            {
+                                CityId = (int)(long)reader[0],
+                                TargetDate = DateTime.ParseExact((string)reader[1], DateTimeFormat, CultureInfo.InvariantCulture),
+                                Temperature = reader.IsDBNull(2) ? int.MinValue : (int)(long)reader[2],
+                                WindSpeed = reader.IsDBNull(3) ? int.MinValue : (int)(long)reader[3],
+                                WindDirection = reader.IsDBNull(4) ? string.Empty : (string)reader[4],
+                                Pressure = reader.IsDBNull(5) ? int.MinValue : (int)(long)reader[5],
+                                Humidity = reader.IsDBNull(6) ? int.MinValue : (int)(long)reader[6]
+                            });
+                        }
+                    }
+                }
+            }
+
+            return result;
         }
 
         /// <summary>

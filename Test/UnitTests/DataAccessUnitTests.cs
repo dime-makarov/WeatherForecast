@@ -27,9 +27,12 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetForecast_Test()
         {
-            IForecastDataAccess svc = new SqliteDataAccessService();
+            IEnumerable<Forecast> forecasts;
 
-            var forecasts = svc.GetForecast(1, DateTime.Now.AddDays(1));
+            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            {
+                forecasts = svc.GetForecast(1, DateTime.Now);
+            }
 
             Assert.IsNotNull(forecasts);
             Assert.IsTrue(forecasts.Any());
