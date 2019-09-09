@@ -10,12 +10,14 @@ namespace Dm.WeatherForecast.Test.UnitTests
     [TestClass]
     public class DataAccessUnitTests
     {
+        protected string ConnectionString = @"Data Source=WeatherForecast.db;";
+
         [TestMethod]
         public void GetCities_Test()
         {
             IEnumerable<City> cities;
 
-            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            using (IForecastDataAccess svc = new SqliteDataAccessService(ConnectionString))
             {
                 cities = svc.GetCities();
             }
@@ -29,7 +31,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         {
             IEnumerable<Forecast> forecasts;
 
-            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            using (IForecastDataAccess svc = new SqliteDataAccessService(ConnectionString))
             {
                 forecasts = svc.GetForecast(1, DateTime.Now);
             }
@@ -43,7 +45,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         {
             int result = 0;
 
-            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            using (IForecastDataAccess svc = new SqliteDataAccessService(ConnectionString))
             {
                 result = svc.AddCity(new City { Name = @"Казань" });
             }
@@ -54,7 +56,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void GetCityByName_Test()
         {
-            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            using (IForecastDataAccess svc = new SqliteDataAccessService(ConnectionString))
             {
                 City city = svc.GetCityByName(@"Казань");
             }
@@ -63,7 +65,7 @@ namespace Dm.WeatherForecast.Test.UnitTests
         [TestMethod]
         public void AddOrUpdateForecast_Test()
         {
-            using (IForecastDataAccess svc = new SqliteDataAccessService())
+            using (IForecastDataAccess svc = new SqliteDataAccessService(ConnectionString))
             {
                 DateTime now = DateTime.Now;
                 DateTime targetDate = new DateTime(now.Year, now.Month, now.Day, 1, 0, 0);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Dm.WeatherForecast.DataAccess.Contract;
 using Dm.WeatherForecast.DataAccess.Service.Sqlite;
 using Dm.WeatherForecast.Service.Wcf.Contract;
@@ -11,7 +12,8 @@ namespace Dm.WeatherForecast.Service.Wcf.Forecast
     {
         public ForecastService()
         {
-            DataAccess = new SqliteDataAccessService();
+            string connStr = ConfigurationManager.AppSettings["DataAccessConnectionString"];
+            DataAccess = new SqliteDataAccessService(connStr);
 
             // Mapping configuration (from DataAccess to WCF contracts)
             TinyMapper.Bind<DataAccess.Contract.City, Contract.City>();

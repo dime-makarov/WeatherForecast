@@ -8,10 +8,9 @@ namespace Dm.WeatherForecast.DataAccess.Service.Sqlite
 {
     public class SqliteDataAccessService : IForecastDataAccess
     {
-        public SqliteDataAccessService()
+        public SqliteDataAccessService(string connectionString)
         {
-            // TODO: Move to configuration file
-            ConnectionString = @"Data Source=WeatherForecast.db;";
+            ConnectionString = connectionString;
         }
 
         protected string ConnectionString;

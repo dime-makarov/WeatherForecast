@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Timers;
 using Dm.WeatherForecast.Client.Grabber.Contract;
@@ -38,7 +39,8 @@ namespace Dm.WeatherForecast.Client.Grabber.App
         /// </summary>
         public GrabberApp()
         {
-            DataAccess = new SqliteDataAccessService();
+            string connStr = ConfigurationManager.AppSettings["DataAccessConnectionString"];
+            DataAccess = new SqliteDataAccessService(connStr);
             Grabber = new GismeteoGrabber();
             TypeDescriptor.AddAttributes(typeof(Dm.WeatherForecast.Client.Grabber.Contract.Forecast), new TypeConverterAttribute(typeof(GrabberForecastConverter)));
             TinyMapper.Bind<Dm.WeatherForecast.Client.Grabber.Contract.Forecast, Dm.WeatherForecast.DataAccess.Contract.Forecast>();
