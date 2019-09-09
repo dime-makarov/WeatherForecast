@@ -6,7 +6,7 @@ using System.Timers;
 using Dm.WeatherForecast.Client.Grabber.Contract;
 using Dm.WeatherForecast.Client.Grabber.Gismeteo;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service.MySql;
+using Dm.WeatherForecast.DataAccess.Service.Sqlite;
 using Nelibur.ObjectMapper;
 
 namespace Dm.WeatherForecast.Client.Grabber.App
@@ -38,7 +38,7 @@ namespace Dm.WeatherForecast.Client.Grabber.App
         /// </summary>
         public GrabberApp()
         {
-            DataAccess = new MySqlDataAccessService();
+            DataAccess = new SqliteDataAccessService();
             Grabber = new GismeteoGrabber();
             TypeDescriptor.AddAttributes(typeof(Dm.WeatherForecast.Client.Grabber.Contract.Forecast), new TypeConverterAttribute(typeof(GrabberForecastConverter)));
             TinyMapper.Bind<Dm.WeatherForecast.Client.Grabber.Contract.Forecast, Dm.WeatherForecast.DataAccess.Contract.Forecast>();

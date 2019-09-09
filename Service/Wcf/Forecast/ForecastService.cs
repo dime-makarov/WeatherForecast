@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Dm.WeatherForecast.DataAccess.Contract;
-using Dm.WeatherForecast.DataAccess.Service.MySql;
+using Dm.WeatherForecast.DataAccess.Service.Sqlite;
 using Dm.WeatherForecast.Service.Wcf.Contract;
 using Nelibur.ObjectMapper;
 
@@ -11,7 +11,7 @@ namespace Dm.WeatherForecast.Service.Wcf.Forecast
     {
         public ForecastService()
         {
-            DataAccess = new MySqlDataAccessService();
+            DataAccess = new SqliteDataAccessService();
 
             // Mapping configuration (from DataAccess to WCF contracts)
             TinyMapper.Bind<DataAccess.Contract.City, Contract.City>();
