@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Nelibur.ObjectMapper;
 using Dm.WeatherForecast.Client.Viewer.ViewerApp.ViewModel;
+using System.Configuration;
 
 namespace Dm.WeatherForecast.Client.Viewer.ViewerApp
 {
@@ -29,8 +30,8 @@ namespace Dm.WeatherForecast.Client.Viewer.ViewerApp
         /// <param name="e"></param>
         protected override void OnLoad(EventArgs e)
         {
-            // TODO: Service host name to config file
-            ForecastClient = new ForecastServiceClient("localhost");
+            string hostName = ConfigurationManager.AppSettings["ForecastServiceHostName"];
+            ForecastClient = new ForecastServiceClient(hostName);
 
             // Implementation is in MainForm.Designer.cs
             SetupDataGrid();
