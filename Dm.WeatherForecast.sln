@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Service.Sqlite", "DataAccess\Service\Sqlite\Dm.WeatherForecast.DataAccess.Service.Sqlite.csproj", "{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.ForecastService", "Client\ForecastService\Dm.WeatherForecast.Client.ForecastService.csproj", "{9B35DFA6-155A-4144-930D-880F66ED7C7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{AECE810F-87AA-4301-867A-D908B1B2E383} = {C7F2DA0C-3E89-441A-8895-972CCDF24299}
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02} = {AECE810F-87AA-4301-867A-D908B1B2E383}
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
+		{9B35DFA6-155A-4144-930D-880F66ED7C7C} = {C7F2DA0C-3E89-441A-8895-972CCDF24299}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92FFCB1F-1954-4803-8C28-E30412069472}

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 
-namespace Dm.WeatherForecast.Client.Viewer.ViewerApp
+namespace Dm.WeatherForecast.Client.ForecastService
 {
     public class ForecastServiceClient : IDisposable
     {

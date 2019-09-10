@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Windows.Forms;
 using Nelibur.ObjectMapper;
 using Dm.WeatherForecast.Client.Viewer.ViewerApp.ViewModel;
-using System.Configuration;
+using Dm.WeatherForecast.Client.ForecastService;
 
 namespace Dm.WeatherForecast.Client.Viewer.ViewerApp
 {

@@ -33,7 +33,6 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,7 +47,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForecastServiceClient.cs" />
     <Compile Include="ViewModel\CityViewModel.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -91,6 +89,10 @@
     <ProjectReference Include="..\..\..\Service\Wcf\Contract\Dm.WeatherForecast.Service.Wcf.Contract.csproj">
       <Project>{DC9853A3-0CCE-433B-8C45-48E4FE050224}</Project>
       <Name>Dm.WeatherForecast.Service.Wcf.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ForecastService\Dm.WeatherForecast.Client.ForecastService.csproj">
+      <Project>{9B35DFA6-155A-4144-930D-880F66ED7C7C}</Project>
+      <Name>Dm.WeatherForecast.Client.ForecastService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
