@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.ForecastService", "Client\ForecastService\Dm.WeatherForecast.Client.ForecastService.csproj", "{9B35DFA6-155A-4144-930D-880F66ED7C7C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{5AE53809-CC44-4612-B4F5-7692DCD55250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.WebApi.Forecast", "Client\WebApi\Forecast\Dm.WeatherForecast.Client.WebApi.Forecast.csproj", "{EC0A6148-51F8-4718-A1B7-B29E709C6D94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +99,10 @@ Global
 		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B35DFA6-155A-4144-930D-880F66ED7C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0A6148-51F8-4718-A1B7-B29E709C6D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0A6148-51F8-4718-A1B7-B29E709C6D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0A6148-51F8-4718-A1B7-B29E709C6D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0A6148-51F8-4718-A1B7-B29E709C6D94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{83753143-2C6B-4E8D-BE9D-A3922860AE02} = {AECE810F-87AA-4301-867A-D908B1B2E383}
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
 		{9B35DFA6-155A-4144-930D-880F66ED7C7C} = {C7F2DA0C-3E89-441A-8895-972CCDF24299}
+		{5AE53809-CC44-4612-B4F5-7692DCD55250} = {C7F2DA0C-3E89-441A-8895-972CCDF24299}
+		{EC0A6148-51F8-4718-A1B7-B29E709C6D94} = {5AE53809-CC44-4612-B4F5-7692DCD55250}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92FFCB1F-1954-4803-8C28-E30412069472}
