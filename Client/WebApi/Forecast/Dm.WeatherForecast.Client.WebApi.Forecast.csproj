@@ -106,6 +106,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CityController.cs" />
     <Compile Include="Controllers\ForecastController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -122,7 +123,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Service\Wcf\Contract\Dm.WeatherForecast.Service.Wcf.Contract.csproj">
+      <Project>{dc9853a3-0cce-433b-8c45-48e4fe050224}</Project>
+      <Name>Dm.WeatherForecast.Service.Wcf.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ForecastService\Dm.WeatherForecast.Client.ForecastService.csproj">
+      <Project>{9b35dfa6-155a-4144-930d-880f66ed7c7c}</Project>
+      <Name>Dm.WeatherForecast.Client.ForecastService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

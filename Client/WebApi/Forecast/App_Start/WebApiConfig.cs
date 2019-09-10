@@ -10,8 +10,8 @@ namespace Dm.WeatherForecast.Client.WebApi.Forecast
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "{controller}/{id}",
-                defaults: new { controller = "Forecast", id = RouteParameter.Optional }
+                routeTemplate: "{controller}",
+                defaults: new { controller = "City" }
             );
         }
     }
