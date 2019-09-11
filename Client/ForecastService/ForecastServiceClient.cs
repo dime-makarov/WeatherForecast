@@ -43,9 +43,9 @@ namespace Dm.WeatherForecast.Client.ForecastService
         /// <summary>
         /// Load forecasts
         /// </summary>
-        public List<Forecast> GetForecast(int cityId)
+        public List<Forecast> GetForecast(int cityId, DateTime targetDate)
         {
-            var forecasts = ServiceChannel.GetForecast(cityId, DateTime.Now.AddDays(1));
+            var forecasts = ServiceChannel.GetForecast(cityId, targetDate);
 
             if (!forecasts.Any())
             {

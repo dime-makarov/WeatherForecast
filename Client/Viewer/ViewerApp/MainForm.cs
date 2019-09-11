@@ -57,7 +57,7 @@ namespace Dm.WeatherForecast.Client.Viewer.ViewerApp
         /// </summary>
         protected List<ForecastViewModel> LoadForecasts(int cityId)
         {
-            var forecasts = ForecastClient.GetForecast(cityId);
+            var forecasts = ForecastClient.GetForecast(cityId, DateTime.Now.AddDays(1));
 
             return TinyMapper.Map<List<ForecastViewModel>>(forecasts);
         }
