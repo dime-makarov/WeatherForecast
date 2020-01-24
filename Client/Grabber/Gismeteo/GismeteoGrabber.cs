@@ -119,6 +119,10 @@ namespace Dm.WeatherForecast.Client.Grabber.Gismeteo
             {
                 string tempStr = tempNode.InnerText.Trim();
 
+                // Can't use WebUtility.HtmlDecode() method as it replaces minus by long dash.
+                // The int.Parse() method doesn't accept long dash.
+                tempStr = tempStr.Replace("&minus;", "-");
+
                 result.Add(int.Parse(tempStr));
             }
 
