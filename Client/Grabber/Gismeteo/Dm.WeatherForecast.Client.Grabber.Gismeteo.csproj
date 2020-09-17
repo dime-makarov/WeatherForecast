@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Dm.WeatherForecast.Client.Grabber.Gismeteo</RootNamespace>
     <AssemblyName>Dm.WeatherForecast.Client.Grabber.Gismeteo</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <OutputPath>..\..\..\Bin</OutputPath>

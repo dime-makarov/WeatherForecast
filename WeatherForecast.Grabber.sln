@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Contract", "DataAccess\Contract\Dm.WeatherForecast.DataAccess.Contract.csproj", "{C810CE96-872F-41F5-B2E4-4221A8D018E0}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.Client.Grabber.App", "Client\Grabber\App\Dm.WeatherForecast.Client.Grabber.App.csproj", "{C412300C-1FFE-4BB8-9536-6FDDA644506A}"
@@ -19,16 +17,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAcce
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{83F38C16-3E1A-49A3-9BDE-2D6156413B2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dm.WeatherForecast.DataAccess.Contract", "DataAccess\Contract\Dm.WeatherForecast.DataAccess.Contract.csproj", "{B2A7E634-C433-431F-BE75-DFDBC3FB09F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C810CE96-872F-41F5-B2E4-4221A8D018E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C810CE96-872F-41F5-B2E4-4221A8D018E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C810CE96-872F-41F5-B2E4-4221A8D018E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C810CE96-872F-41F5-B2E4-4221A8D018E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C412300C-1FFE-4BB8-9536-6FDDA644506A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C412300C-1FFE-4BB8-9536-6FDDA644506A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C412300C-1FFE-4BB8-9536-6FDDA644506A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,17 +41,21 @@ Global
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A7E634-C433-431F-BE75-DFDBC3FB09F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A7E634-C433-431F-BE75-DFDBC3FB09F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A7E634-C433-431F-BE75-DFDBC3FB09F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A7E634-C433-431F-BE75-DFDBC3FB09F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C810CE96-872F-41F5-B2E4-4221A8D018E0} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
 		{C412300C-1FFE-4BB8-9536-6FDDA644506A} = {648FA52E-EC38-4BE1-A544-03E276015000}
 		{648FA52E-EC38-4BE1-A544-03E276015000} = {83F38C16-3E1A-49A3-9BDE-2D6156413B2E}
 		{84ABDB12-872C-4711-BA35-DDA8C87DC535} = {648FA52E-EC38-4BE1-A544-03E276015000}
 		{1A5B6F65-7DF8-4844-8018-19495B995242} = {648FA52E-EC38-4BE1-A544-03E276015000}
 		{7DE9315B-902C-4B3C-9261-1CFD827C7CD2} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
+		{B2A7E634-C433-431F-BE75-DFDBC3FB09F9} = {E1E09638-F44D-4C0C-94C5-9FEE6767BFDA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92FFCB1F-1954-4803-8C28-E30412069472}

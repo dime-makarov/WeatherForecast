@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Dm.WeatherForecast.Client.Grabber.App</RootNamespace>
     <AssemblyName>Dm.WeatherForecast.Client.Grabber.App</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <OutputPath>..\..\..\Bin</OutputPath>
@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\DataAccess\Contract\Dm.WeatherForecast.DataAccess.Contract.csproj">
-      <Project>{c810ce96-872f-41f5-b2e4-4221a8d018e0}</Project>
+      <Project>{b2a7e634-c433-431f-be75-dfdbc3fb09f9}</Project>
       <Name>Dm.WeatherForecast.DataAccess.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\DataAccess\Service\Sqlite\Dm.WeatherForecast.DataAccess.Service.Sqlite.csproj">
